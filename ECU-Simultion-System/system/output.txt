@@ -1,0 +1,437 @@
+
+==== TEST CASE 1 ====
+
+---- SUBCYCLE A ----
+
+Speed = 40 km/h
+Temperature = 80 C
+Gear = 1
+Mode = OFF
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: NORMAL
+
+------------------------------
+
+---- SUBCYCLE B ----
+
+Speed = 40 km/h
+Temperature = 80 C
+Gear = 1
+Mode = ACC
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: NORMAL
+
+------------------------------
+
+---- SUBCYCLE C ----
+
+Speed = 40 km/h
+Temperature = 80 C
+Gear = 1
+Mode = IGNITION_ON
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: NORMAL
+
+------------------------------
+
+=========== TEST CASE 1 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               68       578      380      354      32      
+validate_inputs           30       142      67       260      0       
+update_mode               76       146      118      259      0       
+run_control_checks        32       122      62       368      0       
+update_fault_status       26       68       40       55       0       
+evaluate_state            24       114      54       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 2 ====
+
+---- SUBCYCLE A ----
+
+Speed = 130 km/h
+Temperature = 85 C
+Gear = 4
+Mode = IGNITION_ON
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 1
+
+System State: DEGRADED
+ERROR (SYSTEM): Overspeed
+
+------------------------------
+
+=========== TEST CASE 2 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               66       230      296      354      32      
+validate_inputs           30       30       30       260      0       
+update_mode               28       28       28       259      0       
+run_control_checks        134      134      134      368      0       
+update_fault_status       26       26       26       55       0       
+evaluate_state            62       62       62       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 3 ====
+
+---- SUBCYCLE A ----
+
+Speed = 80 km/h
+Temperature = 100 C
+Gear = 4
+Mode = IGNITION_ON
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: DEGRADED
+WARNING (SYSTEM): High Temperature
+
+------------------------------
+
+=========== TEST CASE 3 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               28       252      280      354      32      
+validate_inputs           30       30       30       260      0       
+update_mode               28       28       28       259      0       
+run_control_checks        130      130      130      368      0       
+update_fault_status       24       24       24       55       0       
+evaluate_state            58       58       58       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 4 ====
+
+---- SUBCYCLE A ----
+
+Speed = 50 km/h
+Temperature = 115 C
+Gear = 3
+Mode = FAULT
+
+Fault Counters:
+Overheat = 1
+Invalid Gear = 0
+Overspeed = 0
+
+System State: SAFE
+ERROR (SYSTEM): Overheat
+
+------------------------------
+
+=========== TEST CASE 4 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               30       88       118      354      32      
+validate_inputs           30       30       30       260      0       
+update_mode               54       54       54       259      0       
+run_control_checks        118      118      118      368      0       
+update_fault_status       24       24       24       55       0       
+evaluate_state            74       74       74       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 5 ====
+
+---- SUBCYCLE A ----
+
+Speed = 50 km/h
+Temperature = 80 C
+Gear = 9
+Mode = IGNITION_ON
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 1
+Overspeed = 0
+
+System State: DEGRADED
+ERROR (SYSTEM): Invalid Gear
+
+------------------------------
+
+=========== TEST CASE 5 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               54       246      300      354      32      
+validate_inputs           160      160      160      260      0       
+update_mode               44       44       44       259      0       
+run_control_checks        114      114      114      368      0       
+update_fault_status       26       26       26       55       0       
+evaluate_state            56       56       56       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 6 ====
+
+---- SUBCYCLE A ----
+
+Speed = 50 km/h
+Temperature = 80 C
+Gear = 2
+Mode = OFF
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: NORMAL
+
+------------------------------
+
+---- SUBCYCLE B ----
+
+Speed = 50 km/h
+Temperature = 80 C
+Gear = 2
+Mode = FAULT
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: DEGRADED
+ERROR (SYSTEM): Illegal Mode Transition
+
+------------------------------
+
+=========== TEST CASE 6 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               28       184      171      354      32      
+validate_inputs           28       30       29       260      0       
+update_mode               26       138      82       259      0       
+run_control_checks        54       80       67       368      0       
+update_fault_status       28       30       29       55       0       
+evaluate_state            26       68       47       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 7 ====
+
+---- SUBCYCLE A ----
+
+Speed = 50 km/h
+Temperature = 80 C
+Gear = 2
+Mode = OFF
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: NORMAL
+
+------------------------------
+
+---- SUBCYCLE B ----
+
+Speed = 50 km/h
+Temperature = 80 C
+Gear = 2
+Mode = ACC
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: NORMAL
+
+------------------------------
+
+---- SUBCYCLE C ----
+
+Speed = 140 km/h
+Temperature = 120 C
+Gear = 9
+Mode = FAULT
+
+Fault Counters:
+Overheat = 1
+Invalid Gear = 1
+Overspeed = 1
+
+System State: SAFE
+ERROR (SYSTEM): Overheat
+ERROR (SYSTEM): Invalid Gear
+ERROR (SYSTEM): Overspeed
+
+------------------------------
+
+=========== TEST CASE 7 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               28       196      156      354      32      
+validate_inputs           30       82       47       260      0       
+update_mode               24       96       60       259      0       
+run_control_checks        30       288      116      368      0       
+update_fault_status       24       24       24       55       0       
+evaluate_state            46       54       50       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 8 ====
+
+---- SUBCYCLE A ----
+
+Speed = 100 km/h
+Temperature = 120 C
+Gear = 4
+Mode = FAULT
+
+Fault Counters:
+Overheat = 1
+Invalid Gear = 0
+Overspeed = 0
+
+System State: SAFE
+ERROR (SYSTEM): Overheat
+
+------------------------------
+
+---- SUBCYCLE B ----
+
+Speed = 100 km/h
+Temperature = 120 C
+Gear = 4
+Mode = FAULT
+
+Fault Counters:
+Overheat = 2
+Invalid Gear = 0
+Overspeed = 0
+
+System State: SAFE
+ERROR (SYSTEM): Overheat
+
+------------------------------
+
+---- SUBCYCLE C ----
+
+Speed = 100 km/h
+Temperature = 120 C
+Gear = 4
+Mode = FAULT
+
+Fault Counters:
+Overheat = 3
+Invalid Gear = 0
+Overspeed = 0
+
+System State: SAFE
+ERROR (SYSTEM): Overheat
+
+------------------------------
+
+=========== TEST CASE 8 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               118      200      202      354      32      
+validate_inputs           30       30       30       260      0       
+update_mode               26       74       48       259      0       
+run_control_checks        40       102      68       368      0       
+update_fault_status       24       66       38       55       0       
+evaluate_state            26       44       32       182      0       
+
+=============================================================
+
+==============================
+
+==== TEST CASE 9 ====
+
+---- SUBCYCLE A ----
+
+Speed = 100 km/h
+Temperature = 100 C
+Gear = 3
+Mode = IGNITION_ON
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: DEGRADED
+WARNING (SYSTEM): High Temperature
+
+------------------------------
+
+---- SUBCYCLE B ----
+
+Speed = 40 km/h
+Temperature = 80 C
+Gear = 1
+Mode = IGNITION_ON
+
+Fault Counters:
+Overheat = 0
+Invalid Gear = 0
+Overspeed = 0
+
+System State: NORMAL
+
+------------------------------
+
+=========== TEST CASE 9 PERFORMANCE ===========
+
+Module                    Min      Max      Avg      Code     Data    
+--------------------------------------------------------------
+read_inputs               76       160      194      354      32      
+validate_inputs           44       52       48       260      0       
+update_mode               72       84       78       259      0       
+run_control_checks        56       166      111      368      0       
+update_fault_status       26       48       37       55       0       
+evaluate_state            26       52       39       182      0       
+
+=============================================================
+
+==============================

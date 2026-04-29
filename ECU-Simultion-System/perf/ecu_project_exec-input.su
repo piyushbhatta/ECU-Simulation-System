@@ -1,0 +1,4 @@
+lib/input.c:14:6:init_input	16	static
+lib/input.c:26:19:fast_atoi	16	static
+lib/input.c:41:5:read_inputs	48	static
+lib/input.c:66:6:validate_inputs	64	static

@@ -1,0 +1,6 @@
+main.c:17:24:rdtsc_start	16	static
+main.c:23:24:rdtsc_end	16	static
+main.c:30:6:init_perf	16	static
+main.c:37:6:update_perf	16	static
+main.c:45:6:print_table	96	dynamic,bounded
+main.c:84:5:main	912	dynamic,bounded

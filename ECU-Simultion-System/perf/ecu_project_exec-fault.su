@@ -1,0 +1,2 @@
+lib/fault.c:3:6:update_fault_status	16	static
+lib/fault.c:11:6:reset_cycle_faults	16	static

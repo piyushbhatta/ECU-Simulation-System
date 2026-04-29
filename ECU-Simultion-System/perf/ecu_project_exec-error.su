@@ -1,0 +1,2 @@
+lib/error.c:4:6:add_error	16	static
+lib/error.c:18:6:log_errors	48	static

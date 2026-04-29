@@ -1,0 +1,3 @@
+lib/compare.c:5:13:get_mode	32	static
+lib/compare.c:14:13:get_state	32	static
+lib/compare.c:22:6:compare_results	496	static

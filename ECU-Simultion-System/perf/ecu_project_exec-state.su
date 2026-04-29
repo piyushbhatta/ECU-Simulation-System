@@ -1,0 +1,2 @@
+lib/state.c:4:13:get_state_name	16	static
+lib/state.c:15:5:evaluate_state	16	static

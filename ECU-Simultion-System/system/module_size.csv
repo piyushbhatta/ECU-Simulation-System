@@ -1,0 +1,7 @@
+Function,Code Size (bytes),Data Size (bytes)
+update_fault_status,55,0
+evaluate_state,182,0
+read_inputs,255,32
+update_mode,259,0
+validate_inputs,268,0
+run_control_checks,379,0

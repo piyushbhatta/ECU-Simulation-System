@@ -1,0 +1,2 @@
+lib/log.c:6:13:get_mode_name	16	static
+lib/log.c:18:6:print_summary	112	dynamic,bounded

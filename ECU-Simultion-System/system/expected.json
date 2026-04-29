@@ -1,0 +1,11 @@
+[
+  { "mode": "IGNITION_ON", "state": "NORMAL" },
+  { "mode": "IGNITION_ON", "state": "DEGRADED" },
+  { "mode": "IGNITION_ON", "state": "DEGRADED" },
+  { "mode": "FAULT", "state": "SAFE" },
+  { "mode": "IGNITION_ON", "state": "DEGRADED" },
+  { "mode": "FAULT", "state": "DEGRADED" },
+  { "mode": "FAULT", "state": "SAFE" },
+  { "mode": "FAULT", "state": "SAFE" },
+  { "mode": "IGNITION_ON", "state": "NORMAL" }
+]
